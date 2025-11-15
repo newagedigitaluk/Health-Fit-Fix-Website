@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 import SafeIcon from '../common/SafeIcon';
 
-const { FiCheck, FiArrowRight, FiAlertCircle, FiZap, FiHeart, FiSun, FiActivity, FiTrendingUp } = FiIcons;
+const { FiCheck, FiArrowRight, FiAlertCircle, FiZap, FiHeart, FiSun, FiActivity, FiTrendingUp, FiClock } = FiIcons;
 
 const Mitolyn = () => {
   const painPoints = [
@@ -20,12 +20,30 @@ const Mitolyn = () => {
   ];
 
   const emotionalBenefits = [
-    { icon: FiSun, text: "Feel naturally more awake and alert" },
-    { icon: FiZap, text: "Support your body's metabolic rhythm" },
-    { icon: FiHeart, text: "Feel lighter and more comfortable throughout the day" },
-    { icon: FiActivity, text: "Reduce that 'weighed down' feeling after meals" },
-    { icon: FiTrendingUp, text: "Support healthier digestion and energy flow" },
-    { icon: FiCheck, text: "Help your body respond and adapt again" }
+    { 
+      icon: FiSun, 
+      text: "Wake up feeling refreshed instead of drained — actually looking forward to your day." 
+    },
+    { 
+      icon: FiZap, 
+      text: "Feel your body 'switch back on' again — finally responsive instead of stubbornly stuck." 
+    },
+    { 
+      icon: FiHeart, 
+      text: "Imagine feeling lighter in your body again — not weighed down, bloated, or uncomfortable in your own skin." 
+    },
+    { 
+      icon: FiActivity, 
+      text: "Eating a meal and feeling energized afterward — not heavy, sluggish, and ready for a nap." 
+    },
+    { 
+      icon: FiTrendingUp, 
+      text: "Looking in the mirror and recognizing yourself again — feeling like the person you remember being." 
+    },
+    { 
+      icon: FiCheck, 
+      text: "Waking up actually wanting to move, instead of dragging yourself through the morning like it's a chore." 
+    }
   ];
 
   const whyItFailed = [
@@ -53,20 +71,28 @@ const Mitolyn = () => {
 
   const testimonials = [
     { 
-      text: "I wasn't looking for a miracle — I just wanted to feel like myself again.",
-      author: "Sarah, 42"
+      text: "My afternoon crash used to hit like a wall. By week 3, I actually had steady energy through dinner.",
+      author: "Sandra M.",
+      age: 52,
+      location: "Oregon"
     },
     { 
-      text: "Every year I felt slower… I didn't know it could change.",
-      author: "Michael, 51"
+      text: "I tried everything — walking, cutting sugar, fasting… nothing worked. This is the first time my body feels responsive.",
+      author: "Maria K.",
+      age: 47,
+      location: "Texas"
     },
     { 
-      text: "I finally understand why I was exhausted all day.",
-      author: "Jennifer, 38"
+      text: "I wake up lighter. Not just in weight — but mentally. Like a fog lifted.",
+      author: "Janet R.",
+      age: 58,
+      location: "Ohio"
     },
     { 
-      text: "My body wasn't broken — it just needed the right support.",
-      author: "Lisa, 45"
+      text: "I couldn't believe I was sleeping through the night again. I forgot what that even felt like.",
+      author: "David R.",
+      age: 48,
+      location: "Arizona"
     }
   ];
 
@@ -76,6 +102,29 @@ const Mitolyn = () => {
     "GMP-Certified Facility",
     "No Artificial Additives",
     "90-Day Money-Back Guarantee"
+  ];
+
+  const urgencyReasons = [
+    {
+      icon: FiAlertCircle,
+      text: "Stock and bonuses often change without notice",
+      color: "from-orange-500 to-red-500"
+    },
+    {
+      icon: FiTrendingUp,
+      text: "First-time customer pricing fluctuates",
+      color: "from-yellow-500 to-orange-500"
+    },
+    {
+      icon: FiClock,
+      text: "The longer mitochondrial slowdown continues, the harder it becomes to reverse",
+      color: "from-red-500 to-rose-500"
+    },
+    {
+      icon: FiZap,
+      text: "Today could be the first day your body starts responding again",
+      color: "from-aqua to-leaf-green"
+    }
   ];
 
   const affiliateLink = "https://trk.healthfitfix.com/mitolyn-n";
@@ -101,7 +150,7 @@ const Mitolyn = () => {
               transition={{ duration: 1, ease: "easeOut" }}
             >
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-montserrat font-bold text-white leading-tight">
-                If You Feel Tired, Heavy, and "Stuck"…{' '}
+                If You Feel <span className="text-aqua font-extrabold">Tired, Heavy, and "Stuck"</span>…{' '}
                 <span className="text-aqua">There's a Reason No One Told You About.</span>
               </h1>
               
@@ -189,36 +238,7 @@ const Mitolyn = () => {
         </div>
       </section>
 
-      {/* SECTION 3 - Micro Story for Relatability */}
-      <section className="py-24 bg-gradient-to-br from-slate-gray/5 to-aqua/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="bg-white rounded-3xl shadow-2xl p-10 md:p-16 border-l-8 border-aqua"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="space-y-6">
-              <div className="w-16 h-16 bg-gradient-to-br from-aqua to-leaf-green rounded-full flex items-center justify-center mx-auto">
-                <SafeIcon icon={FiHeart} className="w-8 h-8 text-white" />
-              </div>
-              
-              <blockquote className="text-2xl md:text-3xl font-lato text-gray-700 leading-relaxed text-center italic">
-                "I used to think there was something wrong with me.
-                <br /><br />
-                I ate clean, I exercised, I tried cutting calories — but my body just felt slower every year.
-                <br /><br />
-                <span className="text-deep-green font-semibold not-italic">
-                  Nothing worked… because I was fighting the wrong problem.
-                </span>
-              </blockquote>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* SECTION 4 - Mechanism Reveal (Mitochondria) */}
+      {/* SECTION 3 - Mechanism Reveal (Mitochondria) */}
       <section className="py-24 bg-gradient-to-br from-slate-gray to-deep-green text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -328,6 +348,35 @@ const Mitolyn = () => {
         </div>
       </section>
 
+      {/* SECTION 4 - Micro Story for Relatability (MOVED AFTER MECHANISM) */}
+      <section className="py-24 bg-gradient-to-br from-slate-gray/5 to-aqua/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="bg-white rounded-3xl shadow-2xl p-10 md:p-16 border-l-8 border-aqua"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="space-y-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-aqua to-leaf-green rounded-full flex items-center justify-center mx-auto">
+                <SafeIcon icon={FiHeart} className="w-8 h-8 text-white" />
+              </div>
+              
+              <blockquote className="text-2xl md:text-3xl font-lato text-gray-700 leading-relaxed text-center italic">
+                "I used to think there was something wrong with me.
+                <br /><br />
+                I ate clean, I exercised, I tried cutting calories — but my body just felt slower every year.
+                <br /><br />
+                <span className="text-deep-green font-semibold not-italic">
+                  Nothing worked… because I was fighting the wrong problem.
+                </span>
+              </blockquote>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* SECTION 5 - The Turning Point */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -360,7 +409,7 @@ const Mitolyn = () => {
       <section className="py-24 bg-gradient-to-br from-off-white to-green-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -372,9 +421,22 @@ const Mitolyn = () => {
                 A Mitochondria-Supporting Formula Designed to Reignite Your Inner Energy.
               </span>
             </h2>
-            <p className="text-xl font-lato text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl font-lato text-gray-600 max-w-3xl mx-auto mb-6">
               A plant-based approach to cellular energy that works with your body, not against it.
             </p>
+            
+            {/* TRANSITIONAL SENTENCE */}
+            <motion.div
+              className="bg-gradient-to-r from-deep-green/10 to-leaf-green/10 rounded-2xl p-8 border-2 border-deep-green/20 max-w-4xl mx-auto"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <p className="text-2xl font-lato text-slate-gray leading-relaxed font-semibold">
+                Mitolyn was designed for people who feel like their body has been in "slow mode" for far too long.
+              </p>
+            </motion.div>
           </motion.div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
@@ -455,7 +517,7 @@ const Mitolyn = () => {
         </div>
       </section>
 
-      {/* SECTION 7 - Emotional Benefits */}
+      {/* SECTION 7 - Emotional Benefits (IMPROVED WORDING) */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -469,27 +531,29 @@ const Mitolyn = () => {
               How You May Feel
             </h2>
             <p className="text-xl font-lato text-gray-600 max-w-3xl mx-auto">
-              Real emotional outcomes people experience — not clinical claims
+              Imagine experiencing these changes in your daily life...
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {emotionalBenefits.map((benefit, index) => (
               <motion.div
-                key={benefit.text}
-                className="bg-gradient-to-br from-leaf-green/5 to-aqua/5 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-leaf-green/20"
+                key={index}
+                className="bg-gradient-to-br from-leaf-green/5 to-aqua/5 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-leaf-green/20"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-leaf-green to-aqua rounded-full flex items-center justify-center mx-auto mb-6">
-                  <SafeIcon icon={benefit.icon} className="w-8 h-8 text-white" />
+                <div className="flex items-start space-x-4">
+                  <div className="w-14 h-14 bg-gradient-to-br from-leaf-green to-aqua rounded-full flex items-center justify-center flex-shrink-0">
+                    <SafeIcon icon={benefit.icon} className="w-7 h-7 text-white" />
+                  </div>
+                  <p className="text-lg font-lato text-slate-gray leading-relaxed pt-2">
+                    {benefit.text}
+                  </p>
                 </div>
-                <p className="text-xl font-lato text-slate-gray font-semibold leading-relaxed">
-                  {benefit.text}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -556,7 +620,7 @@ const Mitolyn = () => {
         </div>
       </section>
 
-      {/* SECTION 9 - Social Proof & Stories */}
+      {/* SECTION 9 - Social Proof & Stories (IMPROVED TESTIMONIALS) */}
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -590,9 +654,14 @@ const Mitolyn = () => {
                 <p className="text-xl font-lato text-gray-700 mb-6 italic leading-relaxed">
                   "{testimonial.text}"
                 </p>
-                <p className="text-deep-green font-montserrat font-semibold">
-                  — {testimonial.author}
-                </p>
+                <div className="flex items-center justify-between">
+                  <p className="text-deep-green font-montserrat font-semibold">
+                    — {testimonial.author}
+                  </p>
+                  <p className="text-gray-500 font-lato text-sm">
+                    {testimonial.age}, {testimonial.location}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -609,7 +678,7 @@ const Mitolyn = () => {
         </div>
       </section>
 
-      {/* SECTION 10 - Trust & Quality */}
+      {/* SECTION 10 - Trust & Quality (WITH GUARANTEE MENTION) */}
       <section className="py-24 bg-gradient-to-br from-slate-gray to-deep-green text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -627,7 +696,7 @@ const Mitolyn = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {trustSignals.map((signal, index) => (
               <motion.div
                 key={signal}
@@ -644,10 +713,87 @@ const Mitolyn = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* SOFT GUARANTEE MENTION */}
+          <motion.div
+            className="bg-aqua/20 backdrop-blur-sm rounded-2xl p-8 border-2 border-aqua text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <p className="text-xl font-lato text-white leading-relaxed">
+              The official site also includes a <span className="text-aqua font-semibold">90-day satisfaction guarantee</span>, so you can explore it without pressure.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* SECTION 11 - Final Emotional CTA */}
+      {/* SECTION 11 - Why This Matters NOW (Urgency) */}
+      <section className="py-24 bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-full mb-6">
+              <SafeIcon icon={FiClock} className="w-10 h-10 text-white" />
+            </div>
+            
+            <h2 className="text-4xl sm:text-5xl font-montserrat font-bold text-slate-gray mb-6">
+              Why You Should Check the Official Page{' '}
+              <span className="text-red-600">Today</span>
+            </h2>
+            <p className="text-xl font-lato text-gray-600 max-w-3xl mx-auto">
+              Waiting can cost you more than you think
+            </p>
+          </motion.div>
+
+          <div className="space-y-6 mb-12">
+            {urgencyReasons.map((reason, index) => (
+              <motion.div
+                key={index}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-l-4 border-transparent hover:border-red-500"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <div className="flex items-start space-x-6">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${reason.color} rounded-full flex items-center justify-center flex-shrink-0`}>
+                    <SafeIcon icon={reason.icon} className="w-8 h-8 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-xl font-lato text-gray-700 leading-relaxed">
+                      {reason.text}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            className="bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-3xl p-12 text-center shadow-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <p className="text-2xl md:text-3xl font-montserrat font-bold mb-4">
+              Every day you wait is another day your mitochondria stay in "shutdown mode."
+            </p>
+            <p className="text-xl font-lato text-orange-100">
+              The good news? You can start supporting them today.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 12 - Final Emotional CTA (IMPROVED BUTTON TEXT) */}
       <section className="py-32 bg-gradient-to-br from-aqua via-leaf-green to-deep-green text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.3),transparent_50%)]"></div>
@@ -676,7 +822,7 @@ const Mitolyn = () => {
                 onClick={handleCTAClick}
                 className="bg-white text-deep-green hover:bg-gray-100 font-montserrat font-bold px-12 py-6 rounded-full text-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl inline-flex items-center space-x-4"
               >
-                <span>Visit the Official Mitolyn Website</span>
+                <span>See Today's Official Mitolyn Offer</span>
                 <SafeIcon icon={FiArrowRight} className="w-8 h-8" />
               </button>
 
