@@ -1,78 +1,43 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import * as FiIcons from 'react-icons/fi';
-import SafeIcon from '../common/SafeIcon';
-
-const { FiCheck } = FiIcons;
 
 const MissionSection = () => {
-  const expectations = [
-    'Clear, actionable tips',
-    'Honest product reviews',
-    'Weekly "Fix List" email with 5-minute wins'
-  ];
-
   return (
-    <section className="py-20 bg-off-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-3xl sm:text-4xl font-montserrat font-semibold text-slate-gray">
-              Why Health Fit Fix?
-            </h2>
-            
-            <p className="text-lg text-gray-600 font-lato leading-relaxed">
-              We help busy adults 30+ cut through the noise with practical guidance you can actually use — from nutrition and movement to sleep, stress, and smart supplements.
-            </p>
+    <section className="py-24 bg-gradient-to-br from-slate-gray to-deep-green text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-aqua rounded-full blur-3xl"></div>
+      </div>
 
-            <p className="text-lg font-montserrat font-semibold text-deep-green">
-              No quick fixes. Just simple steps that work.
-            </p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <motion.div
+          className="max-w-4xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+            <span className="text-sm font-semibold uppercase tracking-wide">
+              Our Mission
+            </span>
+          </div>
 
-            <div className="space-y-4">
-              <h3 className="text-xl font-montserrat font-semibold text-slate-gray">
-                What to Expect:
-              </h3>
-              <ul className="space-y-3">
-                {expectations.map((item, index) => (
-                  <motion.li
-                    key={item}
-                    className="flex items-center space-x-3"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <div className="w-6 h-6 bg-leaf-green rounded-full flex items-center justify-center flex-shrink-0">
-                      <SafeIcon icon={FiCheck} className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="font-lato text-gray-700">{item}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </motion.div>
+          <h2 className="text-4xl sm:text-5xl font-montserrat font-bold mb-8 leading-tight">
+            We Cut Through the Noise
+          </h2>
 
-          {/* Image */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <img
-              src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80"
-              alt="Wellness workspace with journal and smoothie"
-              className="w-full h-auto rounded-2xl shadow-xl"
-              loading="lazy"
-            />
-          </motion.div>
-        </div>
+          <p className="text-xl font-lato leading-relaxed text-white/90 mb-6">
+            Health advice shouldn't be confusing. We translate the latest research into practical, 
+            realistic strategies for busy adults who want to feel better — without the overwhelm.
+          </p>
+
+          <p className="text-lg font-lato leading-relaxed text-white/80">
+            No quick fixes. No miracle cures. Just smart, science-backed guidance that respects 
+            your time, your body, and your real life.
+          </p>
+        </motion.div>
       </div>
     </section>
   );

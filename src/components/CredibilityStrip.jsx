@@ -9,61 +9,62 @@ const CredibilityStrip = () => {
   const features = [
     {
       icon: FiShield,
-      label: 'Evidence-Aware Advice'
+      label: 'Evidence-Aware',
+      desc: 'Backed by science'
     },
     {
       icon: FiHeart,
-      label: 'No-Hype Health'
+      label: 'No-Hype Health',
+      desc: 'Just honest advice'
     },
     {
       icon: FiUsers,
-      label: 'Real-Life Friendly'
+      label: 'Real-Life Friendly',
+      desc: 'Fits your schedule'
     },
     {
       icon: FiLock,
-      label: 'Privacy First'
+      label: 'Privacy First',
+      desc: 'Your data is safe'
     }
   ];
 
   return (
-    <section className="py-12 bg-white border-t border-b border-gray-100">
+    <section className="py-10 -mt-10 relative z-30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          className="bg-white rounded-2xl shadow-soft border border-gray-100 p-8 md:p-12"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.label}
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-            >
-              <div className="flex justify-center mb-3">
-                <div className="w-12 h-12 bg-leaf-green bg-opacity-10 rounded-full flex items-center justify-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.label}
+                className="flex flex-col items-center text-center group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <div className="w-14 h-14 bg-off-white group-hover:bg-soft-green rounded-2xl flex items-center justify-center mb-4 transition-colors duration-300">
                   <SafeIcon
                     icon={feature.icon}
-                    className="w-6 h-6 text-deep-green"
+                    className="w-7 h-7 text-gray-400 group-hover:text-leaf-green transition-colors duration-300"
                   />
                 </div>
-              </div>
-              <p className="font-montserrat font-semibold text-slate-gray text-sm">
-                {feature.label}
-              </p>
-            </motion.div>
-          ))}
+                <h3 className="font-montserrat font-bold text-slate-gray text-base mb-1">
+                  {feature.label}
+                </h3>
+                <p className="text-xs text-gray-500 font-lato">
+                  {feature.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
-        <motion.p
-          className="text-center text-gray-500 text-sm font-lato mt-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          Backed by research summaries and real-world experience.
-        </motion.p>
       </div>
     </section>
   );

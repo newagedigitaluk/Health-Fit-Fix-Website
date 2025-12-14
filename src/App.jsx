@@ -8,6 +8,8 @@ import Contact from './pages/Contact';
 import AffiliateDisclosure from './pages/AffiliateDisclosure';
 import PrimeBiome from './pages/PrimeBiome';
 import Mitolyn from './pages/Mitolyn';
+import NerveFresh from './pages/NerveFresh';
+import NerveFreshEditorial from './pages/NerveFreshEditorial';
 import './App.css';
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
         <Route path="/affiliate-disclosure" element={<AffiliateDisclosure />} />
         <Route path="/prime-biome" element={<PrimeBiome />} />
         <Route path="/mitolyn" element={<Mitolyn />} />
+        <Route path="/nerve-fresh" element={<NerveFresh />} />
+        <Route path="/nerve-relief-research" element={<NerveFreshEditorial />} />
       </Routes>
     </Router>
   );
